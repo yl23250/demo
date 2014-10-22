@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.ylpro.dao.trole_tresource.TroleTresourceDao" > 
+<!-- Result Map-->
+<resultMap id="BaseResultMap" type="org.ylpro.entity.trole_tresource.TroleTresource" >
+	<result column="tresource_id" property="tresource_id"/>
+	<result column="trole_id" property="trole_id"/>
+</resultMap>
+       
+<!-- trole_tresource table all fields -->
+<sql id="Base_Column_List" >
+	 tresource_id,trole_id
+</sql>
+   
+   
+<!-- 查询条件 -->
+<sql id="Example_Where_Clause">
+where 1=1
+<trim  suffixOverrides="," >
+	<if test="tresource_id != null and tresource_id != ''" >
+	    and tresource_id =  #{tresource_id}
+	</if>
+	<if test="trole_id != null and trole_id != ''" >
+	    and trole_id =  #{trole_id}
+	</if>
+</trim>
+</sql>
+   
+
+<!-- 插入记录 -->
+<insert id="add" parameterType="Object" >
+  insert into trole_tresource(tresource_id,trole_id)
+ values(#{tresource_id},#{trole_id})
+</insert>
+
+<!-- 根据id，修改记录-->  
+ <update id="update" parameterType="Object" >
+  update trole_tresource set trole_id=#{trole_id} where tresource_id=#{tresource_id}
+ </update>
+ 
+ <!-- 修改记录，只修改只不为空的字段 -->
+<update id="updateBySelective" parameterType="Object" >
+	update trole_tresource set 
+	<trim  suffixOverrides="," >
+	<if test="trole_id != null  ">
+		trole_id=#{trole_id},
+	</if>
+	</trim> where tresource_id=#{tresource_id}
+</update>
+
+<!-- 删除记录 -->
+<delete id="delete" parameterType="Object">
+	delete 	 from trole_tresource where tresource_id = #{tresource_id}
+</delete>
+ 
+<!-- 根据id查询 角色资源关联 -->
+<select id="queryById"  resultMap="BaseResultMap" parameterType="Object">
+	select <include refid="Base_Column_List" /> 
+	 from trole_tresource where tresource_id = #{tresource_id}
+</select>
+
+<!-- 角色资源关联 列表总数-->
+<select id="queryByCount" resultType="java.lang.Integer"  parameterType="Object">
+	select count(1) from trole_tresource 
+	<include refid="Example_Where_Clause"/>
+</select>
+  	
+<!-- 查询角色资源关联列表 -->
+<select id="queryByList" resultMap="BaseResultMap"  parameterType="Object">
+	select 
+	<include refid="Base_Column_List"/>
+	from trole_tresource 
+	<include refid="Example_Where_Clause"/>
+	<if test="pager.orderCondition != null and pager.orderCondition != ''" >
+      ${pager.orderCondition}
+    </if>
+    <if test="pager.mysqlQueryCondition != null and pager.mysqlQueryCondition != ''" >
+       ${pager.mysqlQueryCondition}
+    </if>
+</select>
+  	
+</mapper>   

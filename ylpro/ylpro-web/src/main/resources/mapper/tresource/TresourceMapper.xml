@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.ylpro.dao.tresource.TresourceDao" > 
+<!-- Result Map-->
+<resultMap id="BaseResultMap" type="org.ylpro.entity.tresource.Tresource" >
+	<result column="id" property="id"/>
+	<result column="icon" property="icon"/>
+	<result column="name" property="name"/>
+	<result column="remark" property="remark"/>
+	<result column="seq" property="seq"/>
+	<result column="url" property="url"/>
+	<result column="pid" property="pid"/>
+	<result column="tresourcetype_id" property="tresourcetype_id"/>
+</resultMap>
+       
+<!-- tresource table all fields -->
+<sql id="Base_Column_List" >
+	 id,icon,name,remark,seq,url,pid,tresourcetype_id
+</sql>
+   
+   
+<!-- 查询条件 -->
+<sql id="Example_Where_Clause">
+where 1=1
+<trim  suffixOverrides="," >
+	<if test="id != null and id != ''" >
+	    and id =  #{id}
+	</if>
+	<if test="icon != null and icon != ''" >
+	    and icon =  #{icon}
+	</if>
+	<if test="name != null and name != ''" >
+	    and name =  #{name}
+	</if>
+	<if test="remark != null and remark != ''" >
+	    and remark =  #{remark}
+	</if>
+	<if test="seq != null and seq != ''" >
+	    and seq =  #{seq}
+	</if>
+	<if test="url != null and url != ''" >
+	    and url =  #{url}
+	</if>
+	<if test="pid != null and pid != ''" >
+	    and pid =  #{pid}
+	</if>
+	<if test="tresourcetype_id != null and tresourcetype_id != ''" >
+	    and tresourcetype_id =  #{tresourcetype_id}
+	</if>
+</trim>
+</sql>
+   
+
+<!-- 插入记录 -->
+<insert id="add" parameterType="Object" >
+  insert into tresource(id,icon,name,remark,seq,url,pid,tresourcetype_id)
+ values(#{id},#{icon},#{name},#{remark},#{seq},#{url},#{pid},#{tresourcetype_id})
+</insert>
+
+<!-- 根据id，修改记录-->  
+ <update id="update" parameterType="Object" >
+  update tresource set icon=#{icon},name=#{name},remark=#{remark},seq=#{seq},url=#{url},pid=#{pid},tresourcetype_id=#{tresourcetype_id} where id=#{id}
+ </update>
+ 
+ <!-- 修改记录，只修改只不为空的字段 -->
+<update id="updateBySelective" parameterType="Object" >
+	update tresource set 
+	<trim  suffixOverrides="," >
+	<if test="icon != null  ">
+		icon=#{icon},
+	</if>
+	<if test="name != null  ">
+		name=#{name},
+	</if>
+	<if test="remark != null  ">
+		remark=#{remark},
+	</if>
+	<if test="seq != null  ">
+		seq=#{seq},
+	</if>
+	<if test="url != null  ">
+		url=#{url},
+	</if>
+	<if test="pid != null  ">
+		pid=#{pid},
+	</if>
+	<if test="tresourcetype_id != null  ">
+		tresourcetype_id=#{tresourcetype_id},
+	</if>
+	</trim> where id=#{id}
+</update>
+
+<!-- 删除记录 -->
+<delete id="delete" parameterType="Object">
+	delete 	 from tresource where id = #{id}
+</delete>
+ 
+<!-- 根据id查询 资源 -->
+<select id="queryById"  resultMap="BaseResultMap" parameterType="Object">
+	select <include refid="Base_Column_List" /> 
+	 from tresource where id = #{id}
+</select>
+
+<!-- 资源 列表总数-->
+<select id="queryByCount" resultType="java.lang.Integer"  parameterType="Object">
+	select count(1) from tresource 
+	<include refid="Example_Where_Clause"/>
+</select>
+  	
+<!-- 查询资源列表 -->
+<select id="queryByList" resultMap="BaseResultMap"  parameterType="Object">
+	select 
+	<include refid="Base_Column_List"/>
+	from tresource 
+	<include refid="Example_Where_Clause"/>
+	<if test="pager.orderCondition != null and pager.orderCondition != ''" >
+      ${pager.orderCondition}
+    </if>
+    <if test="pager.mysqlQueryCondition != null and pager.mysqlQueryCondition != ''" >
+       ${pager.mysqlQueryCondition}
+    </if>
+</select>
+  	
+</mapper>   

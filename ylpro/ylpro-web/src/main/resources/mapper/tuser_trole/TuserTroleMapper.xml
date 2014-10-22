@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.ylpro.dao.tuser_trole.TuserTroleDao" > 
+<!-- Result Map-->
+<resultMap id="BaseResultMap" type="org.ylpro.entity.tuser_trole.TuserTrole" >
+	<result column="trole_id" property="trole_id"/>
+	<result column="tuser_id" property="tuser_id"/>
+</resultMap>
+       
+<!-- tuser_trole table all fields -->
+<sql id="Base_Column_List" >
+	 trole_id,tuser_id
+</sql>
+   
+   
+<!-- 查询条件 -->
+<sql id="Example_Where_Clause">
+where 1=1
+<trim  suffixOverrides="," >
+	<if test="trole_id != null and trole_id != ''" >
+	    and trole_id =  #{trole_id}
+	</if>
+	<if test="tuser_id != null and tuser_id != ''" >
+	    and tuser_id =  #{tuser_id}
+	</if>
+</trim>
+</sql>
+   
+
+<!-- 插入记录 -->
+<insert id="add" parameterType="Object" >
+  insert into tuser_trole(trole_id,tuser_id)
+ values(#{trole_id},#{tuser_id})
+</insert>
+
+<!-- 根据id，修改记录-->  
+ <update id="update" parameterType="Object" >
+  update tuser_trole set tuser_id=#{tuser_id} where trole_id=#{trole_id}
+ </update>
+ 
+ <!-- 修改记录，只修改只不为空的字段 -->
+<update id="updateBySelective" parameterType="Object" >
+	update tuser_trole set 
+	<trim  suffixOverrides="," >
+	<if test="tuser_id != null  ">
+		tuser_id=#{tuser_id},
+	</if>
+	</trim> where trole_id=#{trole_id}
+</update>
+
+<!-- 删除记录 -->
+<delete id="delete" parameterType="Object">
+	delete 	 from tuser_trole where trole_id = #{trole_id}
+</delete>
+ 
+<!-- 根据id查询 用户角色 -->
+<select id="queryById"  resultMap="BaseResultMap" parameterType="Object">
+	select <include refid="Base_Column_List" /> 
+	 from tuser_trole where trole_id = #{trole_id}
+</select>
+
+<!-- 用户角色 列表总数-->
+<select id="queryByCount" resultType="java.lang.Integer"  parameterType="Object">
+	select count(1) from tuser_trole 
+	<include refid="Example_Where_Clause"/>
+</select>
+  	
+<!-- 查询用户角色列表 -->
+<select id="queryByList" resultMap="BaseResultMap"  parameterType="Object">
+	select 
+	<include refid="Base_Column_List"/>
+	from tuser_trole 
+	<include refid="Example_Where_Clause"/>
+	<if test="pager.orderCondition != null and pager.orderCondition != ''" >
+      ${pager.orderCondition}
+    </if>
+    <if test="pager.mysqlQueryCondition != null and pager.mysqlQueryCondition != ''" >
+       ${pager.mysqlQueryCondition}
+    </if>
+</select>
+  	
+</mapper>   
