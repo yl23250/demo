@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.ylpro.dao.TroleTresourceMapper" >
+  <resultMap id="BaseResultMap" type="org.ylpro.model.TroleTresourceKey" >
+    <id column="TROLE_ID" property="troleId" jdbcType="VARCHAR" />
+    <id column="TRESOURCE_ID" property="tresourceId" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="org.ylpro.model.TroleTresourceKey" >
+    delete from trole_tresource
+    where TROLE_ID = #{troleId,jdbcType=VARCHAR}
+      and TRESOURCE_ID = #{tresourceId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="org.ylpro.model.TroleTresourceKey" >
+    insert into trole_tresource (TROLE_ID, TRESOURCE_ID)
+    values (#{troleId,jdbcType=VARCHAR}, #{tresourceId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="org.ylpro.model.TroleTresourceKey" >
+    insert into trole_tresource
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="troleId != null" >
+        TROLE_ID,
+      </if>
+      <if test="tresourceId != null" >
+        TRESOURCE_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="troleId != null" >
+        #{troleId,jdbcType=VARCHAR},
+      </if>
+      <if test="tresourceId != null" >
+        #{tresourceId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
