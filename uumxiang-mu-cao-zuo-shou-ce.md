@@ -10,6 +10,6 @@
     
 ### 测试环境
 
-        
+*   登录帐号-选择TAB【**Tester**】-**Test_Build_Services(公共基础服务) **——【Build with Parameters】——【uum-provider】        
 
 ## web部署
