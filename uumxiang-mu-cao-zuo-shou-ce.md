@@ -17,4 +17,4 @@
 *    jenkins地址：    http://172.30.43.251:8080/view/%E4%BA%91%E5%B9%B3%E5%8F%B0%E4%B8%80%E6%9C%9F/job/yosemite_app_development/
 
 
-
+* 导出uum-web.war
