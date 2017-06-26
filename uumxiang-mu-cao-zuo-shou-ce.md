@@ -22,8 +22,8 @@
 | :--- | :--- | :--- | :--- |
 | web-开发环境 | 244 | yosemite/Hzda123.. | /data/webapps/uum-web-18280/webapps |
 | web-测试环境 | 247 |  | /home/webapps/uum-web-18280/webapps |
-| UUM测试环境 | 248 |  |  |
-| UUM开发环境 | 245 |  |  |
+| UUM测试环境 | 248 |  | /home/yosemite\_services/uum-provider |
+| UUM开发环境 | 245 |  | /data/yosemite\_services/uum-provider/bin |
 
 
 
