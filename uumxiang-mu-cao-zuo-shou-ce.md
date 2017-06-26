@@ -20,7 +20,7 @@
 
 | 环境 | 服务器地址 | 帐号密码 | 部署路径 |
 | :--- | :--- | :--- | :--- |
-| web-开发环境 | 244 | yosemite/Hzda123.. |  |
+| web-开发环境 | 244 | yosemite/Hzda123.. | /data/webapps/uum-web-18280/webapps |
 | web-测试环境 | 247 |  |  |
 | UUM测试环境 | 248 |  |  |
 | UUM开发环境 | 245 |  |  |
