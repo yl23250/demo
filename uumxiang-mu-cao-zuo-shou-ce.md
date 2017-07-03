@@ -16,6 +16,8 @@
 
 * jenkins地址：    [http://172.30.43.251:8080/view/云平台一期/job/yosemite\_app\_development/](http://172.30.43.251:8080/view/云平台一期/job/yosemite_app_development/)
 
+* jenkins测试地址：http://172.30.43.251:8080/job/yosemite\_app\_test/modules
+
 * 导出uum-web.war
 
 | 环境 | 服务器地址 | 帐号密码 | 部署路径 |
