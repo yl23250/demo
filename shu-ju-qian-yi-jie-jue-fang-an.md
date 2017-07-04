@@ -38,5 +38,12 @@
 
 # 4.最终效果
 
+| UNIQUE\_CODE |
+| :--- |
+| \_top\_brand\_detail\_E\_ |
+| \_top\_brand\_detail\_D\_ |
+| \_top\_brand\_ |
+
+
 
 
