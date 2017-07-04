@@ -4,6 +4,17 @@
 
 # 2.解决方案
 
+在UUM_FUNC表中添加一个字段“UNIQUE_CODE”,
+并将“UNIQUE_CODE”设置为唯一索引字段。
+然后用程序对现有数据进行清洗：
+“UNIQUE_CODE”的组成= parentFuncCoe + funcCode。
+如果parentFuncCoe为空，即为一级菜单，则parentFuncCoe
+=“_top_”。
+
+# 3.方案描述
+
+清洗程序代码:
+
 ```
 		for (FuncDto func : funcs) {
 			String uniqueCode = "_";
