@@ -7,9 +7,9 @@
 在UUM_FUNC表中添加一个字段“UNIQUE\_CODE”,  
 并将“UNIQUE\_CODE”设置为唯一索引字段。  
 然后用程序对现有数据进行清洗：  
-“UNIQUE\_CODE”的组成= parentFuncCoe + funcCode。  
+“UNIQUE\_CODE”的组成= parentFuncCoe + funcCode+flag。  
 如果parentFuncCoe为空，即为一级菜单，则parentFuncCoe  
-=“_top_”。
+=“\_top\_”。
 
 # 3.方案描述
 
