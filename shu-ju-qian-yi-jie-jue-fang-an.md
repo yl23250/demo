@@ -9,7 +9,7 @@
 然后用程序对现有数据进行清洗：  
 “UNIQUE\_CODE”的组成= parentFuncCoe + funcCode+flag。  
 如果parentFuncCoe为空，即为一级菜单，则parentFuncCoe  
-=“\_top\_”。
+=“\_top”。
 
 # 3.方案描述
 
