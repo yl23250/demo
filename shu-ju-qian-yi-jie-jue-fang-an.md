@@ -1,5 +1,8 @@
 # 1.存在问题
 
+目前yosemite_uum库的UUM_FUN表中存在一定数量脏数据，根据APP_ID,FUN_CODE,PATH已经无法确定数据是否存在。
+
+
 ```
 		for (FuncDto func : funcs) {
 			String uniqueCode = "_";
