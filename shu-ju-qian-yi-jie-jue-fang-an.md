@@ -8,7 +8,7 @@
 并将“UNIQUE\_CODE”设置为唯一索引字段。  
 然后用程序对现有数据进行清洗：  
 有效的“UNIQUE_CODE”的组成= parentFuncCoe + funcCode+flag。  
-无效的的“UNIQUE_CODE”的组成= _D_funcCode_+"LongDate"。  
+无效的的“UNIQUE_CODE”的组成= _D_funcCode_+['LongDate']。  
 
 如果parentFuncCoe为空，即为一级菜单，则parentFuncCoe  
 =“\_top\__”。
@@ -21,7 +21,7 @@
 * 2.清洗path字段2
 > path的内容组成应由 .[N..parentId].id 形式组成，但表中存在无效脏parentId 
 * 3.对flag为D的脏记录进行清洗
-> uniqueCode放上日期：_D_system_user_add_20170106
+> uniqueCode放上日期：_D_top_user_add_20170106
 
 经过清洗后，uniqueCode为绝对唯一值
 需要在原有方法上修正一些逻辑
