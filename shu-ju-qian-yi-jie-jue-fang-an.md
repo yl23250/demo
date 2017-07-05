@@ -24,6 +24,9 @@
 经过清洗后，uniqueCode为绝对唯一值
 需要在原有方法上修正一些逻辑
 
+在原有：增、改、删方法上添加对uniqueCode的修正
+增/改：_top_[N..parentFuncCode]_funcCode_
+删:_D_funcCode_LongDate
 
 
 
