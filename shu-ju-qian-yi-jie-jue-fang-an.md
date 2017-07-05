@@ -17,7 +17,7 @@
 * 1.清洗path字段1
 > path规则应以"."开头,但部分path存在不是以"."开头的情况
 * 2.清洗path字段2
-> path的内容组成应由 .[N..parentId].id 形式组成 
+> path的内容组成应由 .[N..parentId].id 形式组成，但表中存在无效脏parentId 
    
 
 
