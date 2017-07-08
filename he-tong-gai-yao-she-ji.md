@@ -10,30 +10,8 @@
 
 ## 2.1用户接口
 
-### 2.1.1供应商端(MALLS)
 
-> 提交给前端人员测试使用，此处为概要设计，只要描述接口简要信息
-
-
-| 接口名称   |接口描述     |  接口地址(alias)   |
-| :------------- | :------------- |  :------------- |
-| 添加合同       | Item Two       | Item Two       |
-| Item One       | Item Two       | Item Two       |
-| Item One       | Item Two       | Item Two       |
-| Item One       | Item Two       | Item Two       |
-| Item One       | Item Two       | Item Two       |
-
-### 2.1.2采购商端(MALL)
-
-| 接口名称   |接口描述     |  接口地址(alias)   |
-| :------------- | :------------- |  :------------- |
-| Item One       | Item Two       | Item Two       |
-| Item One       | Item Two       | Item Two       |
-| Item One       | Item Two       | Item Two       |
-| Item One       | Item Two       | Item Two       |
-| Item One       | Item Two       | Item Two       |
-
-### 2.1.3平台端(MALLP)
+### 2.1.1平台端(MALLP)
 
 | 接口名称   |接口描述     |  接口地址(alias)   |
 | :------------- | :------------- |  :------------- |
@@ -59,6 +37,31 @@
 | 删除合同产品     | Item Two       | Item Two       |
 | 合同操作日志查看接口     | Item Two       | Item Two       |
 | 设置合同无效 | Item Two | Item Two |
+
+### 2.1.2供应商端(MALLS)
+
+> 提交给前端人员测试使用，此处为概要设计，只要描述接口简要信息
+
+
+| 接口名称   |接口描述     |  接口地址(alias)   |
+| :------------- | :------------- |  :------------- |
+| 添加合同       | Item Two       | Item Two       |
+| Item One       | Item Two       | Item Two       |
+| Item One       | Item Two       | Item Two       |
+| Item One       | Item Two       | Item Two       |
+| Item One       | Item Two       | Item Two       |
+
+### 2.1.3采购商端(MALL)
+
+| 接口名称   |接口描述     |  接口地址(alias)   |
+| :------------- | :------------- |  :------------- |
+| Item One       | Item Two       | Item Two       |
+| Item One       | Item Two       | Item Two       |
+| Item One       | Item Two       | Item Two       |
+| Item One       | Item Two       | Item Two       |
+| Item One       | Item Two       | Item Two       |
+
+
 
 ## 2.2外部接口
 
