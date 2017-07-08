@@ -6,4 +6,5 @@
 * [供应链ERP系统对接方案](gong-ying-lian-erp-xi-tong-dui-jie.md)
 * [数据迁移解决方案](shu-ju-qian-yi-jie-jue-fang-an.md)
 * [采购合同讨论](cai-gou-he-tong-tao-lun.md)
+* [合同概要设计](he-tong-gai-yao-she-ji.md)
 
