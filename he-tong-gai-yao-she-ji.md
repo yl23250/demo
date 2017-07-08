@@ -26,7 +26,6 @@
 | 定向合同可选的下游客户列表      | Item Two       | Item Two       |
 | 定向合同已选的下游客户列表      | Item Two       | Item Two       |
 | 区域列表      | Item Two       | Item Two       |
-| 区域列表      | Item Two       | Item Two       |
 | 查看合同      | 平台端查看包含合同主信息与保密信息，供应商端与采购商端只有基本信息       | Item Two       |
 | 查看合同产品列表      | Item Two       | Item Two       |
 | 保存合同(添加、编辑确认触发)      | Item Two       | Item Two       |
