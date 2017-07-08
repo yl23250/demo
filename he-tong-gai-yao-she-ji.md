@@ -80,6 +80,7 @@
 
 ## 3.2 物理结构设计要点
 
+![](/assets/Full0.png)
 详见powerdesign PY设计
 
 # 4.系统出错设计处理
